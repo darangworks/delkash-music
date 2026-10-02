@@ -11,7 +11,6 @@ composer: "حسن لشگری"
 composers: ["حسن لشگری"]
 lyricist: "علیرضا طبائی"
 dastgah: "آواز دشتی"
-decades: ["دهه ۵۰"]
 cover:
   image: "https://res.cloudinary.com/wtx6mnrm/image/upload/v1788608039/hayedeh2.jpg"
   hidden: true
