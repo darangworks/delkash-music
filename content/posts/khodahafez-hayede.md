@@ -3,6 +3,10 @@ title: "آهنگ خداحافظ هایده | متن تصنیف و دانلود �
 date: 2026-08-10
 description: "متن کامل آهنگ خداحافظ با صدای هایده (اثر جهانبخش پازوکی در آواز دشتی) + پخش آنلاین و دانلود کیفیت ۳۲۰"
 audio: "https://archive.org/download/khodahafez-hayede/khodahafez-hayede.mp3"
+recordings:
+  - artist: "هایده"
+    role: "original"
+    audio: "https://archive.org/download/khodahafez-hayede/khodahafez-hayede.mp3"
 tags: ["خداحافظ"]
 categories: ["آواز دشتی"]
 artist: "هایده"
@@ -37,11 +41,7 @@ cover:
 
 ## پخش و دانلود
 
-<audio controls preload="none">
-  <source src="https://archive.org/download/khodahafez-hayede/khodahafez-hayede.mp3" type="audio/mpeg">
-</audio>
-
-<a class="dl-btn" href="https://archive.org/download/khodahafez-hayede/khodahafez-hayede.mp3">⬇ دانلود آهنگ خداحافظ (۳۲۰)</a>
+{{< recordings >}}
 
 ## متن آهنگ خداحافظ
 
