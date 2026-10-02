@@ -27,11 +27,12 @@
         "byArtist": { "@type": "Person", "name": {{ $r.artist | jsonify | safeJS }} },
         "inLanguage": "fa",
         "recordingOf": { "@id": {{ printf "%s#composition" $.Permalink | jsonify | safeJS }} },
+        {{ with $r.audio }}
         "audio": {
           "@type": "AudioObject",
-          "contentUrl": {{ $r.audio | jsonify | safeJS }},
+          "contentUrl": {{ . | jsonify | safeJS }},
           "encodingFormat": "audio/mpeg"
-        }{{ with $r.duration }},
+        }{{ end }}{{ with $r.duration }},
         "duration": {{ . | jsonify | safeJS }}{{ end }}
       }
       {{- end }}
