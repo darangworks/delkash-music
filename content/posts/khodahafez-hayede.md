@@ -1,5 +1,6 @@
 ---
 title: "آهنگ خداحافظ هایده | متن تصنیف و دانلود با کیفیت ۳۲۰"
+songTitle: "خداحافظ"
 date: 2026-08-10
 description: "متن کامل آهنگ خداحافظ با صدای هایده (اثر جهانبخش پازوکی در آواز دشتی) + پخش آنلاین و دانلود کیفیت ۳۲۰"
 audio: "https://archive.org/download/khodahafez-hayede/khodahafez-hayede.mp3"

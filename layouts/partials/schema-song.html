@@ -5,7 +5,7 @@
   "@type": "MusicComposition",
   "@id": {{ printf "%s#composition" .Permalink | jsonify | safeJS }},
   "mainEntityOfPage": {{ .Permalink | jsonify | safeJS }},
-  "name": {{ .Title | jsonify | safeJS }},
+  "name": {{ .Params.songTitle | default .Title | jsonify | safeJS }},
   {{- with .Params.alternateTitles }}
   "alternateName": {{ . | jsonify | safeJS }},
   {{- end }}
@@ -23,7 +23,7 @@
       {
         "@type": "MusicRecording",
         "@id": {{ printf "%s#recording-%d" $.Permalink $i | jsonify | safeJS }},
-        "name": {{ $.Title | jsonify | safeJS }},
+        "name": {{ $.Params.songTitle | default $.Title | jsonify | safeJS }},
         "byArtist": { "@type": "Person", "name": {{ $r.artist | jsonify | safeJS }} },
         "inLanguage": "fa",
         "recordingOf": { "@id": {{ printf "%s#composition" $.Permalink | jsonify | safeJS }} },
@@ -40,7 +40,7 @@
       {
         "@type": "MusicRecording",
         "@id": {{ printf "%s#recording-0" .Permalink | jsonify | safeJS }},
-        "name": {{ .Title | jsonify | safeJS }},
+        "name": {{ .Params.songTitle | default .Title | jsonify | safeJS }},
         "byArtist": { "@type": "Person", "name": {{ .Params.artist | default "نامشخص" | jsonify | safeJS }} },
         "inLanguage": "fa",
         "recordingOf": { "@id": {{ printf "%s#composition" .Permalink | jsonify | safeJS }} },
