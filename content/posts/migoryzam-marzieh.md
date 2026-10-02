@@ -9,7 +9,6 @@ recordings:
     audio: "https://archive.org/download/migoryzam-homayoun-kazemi/migoryzam-marzieh.mp3"
   - artist: "همایون کاظمی"
     role: "cover"
-    audio: "https://archive.org/download/migoryzam-homayoun-kazemi/migoryzam-homayoun-kazemi.mp3"
 tags: ["می‌گریزم"]
 categories: ["آواز دشتی"]
 artist: "مرضیه"

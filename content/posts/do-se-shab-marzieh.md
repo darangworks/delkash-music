@@ -11,7 +11,6 @@ recordings:
     audio: "https://archive.org/download/do-se-shab-marzieh/do-se-shab-marzieh.mp3"
   - artist: "جهان"
     role: "cover"
-    audio: "https://archive.org/download/do-se-shab-marzieh/do-se-shab-jahan.mp3"
 tags: ["دو سه شبه"]
 categories: ["آواز دشتی"]
 artist: "مرضیه"
