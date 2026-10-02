@@ -13,6 +13,7 @@
 {
   "@context": "https://schema.org",
   "@type": "MusicComposition",
+  "mainEntityOfPage": {{ .Permalink | jsonify }},
   "name": {{ .Title | jsonify }},
   "description": {{ .Params.description | default .Summary | jsonify }},
   "inLanguage": "fa",
@@ -21,6 +22,7 @@
   "lyricist": { "@type": "Person", "name": {{ .Params.lyricist | default "نامشخص" | jsonify }} },
   "composer": { "@type": "Person", "name": {{ .Params.composer | default "نامشخص" | jsonify }} },
   "genre": {{ .Params.dastgah | default "" | jsonify }},
+  "isFamilyFriendly": true,
   "recordedAs": {
     "@type": "MusicRecording",
     "byArtist": { "@type": "MusicGroup", "name": {{ $artistName | jsonify }} },
@@ -40,6 +42,11 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {{ printf "%ssearch/?q={search_term_string}" .Site.BaseURL | jsonify }},
+    "query-input": "required name=search_term_string"
+  },
   "name": {{ .Site.Title | jsonify }},
   "url": {{ .Site.BaseURL | jsonify }},
   "inLanguage": "fa"
