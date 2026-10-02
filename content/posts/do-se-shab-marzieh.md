@@ -7,7 +7,7 @@ alternateTitles:
   - "خدا کنه خوابم نبره"
 recordings:
   - artist: "مرضیه"
-    role: "original"
+    role: "primary"
     audio: "https://archive.org/download/do-se-shab-marzieh/do-se-shab-marzieh.mp3"
   - artist: "جهان"
     role: "cover"
