@@ -10,6 +10,8 @@ cover:
   relative: false
   hiddenInSingle: true
 hideFromLists: true
+sitemap:
+  disable: true
 ---
 
 سلام به همه دوستان و همراهان عزیز،
