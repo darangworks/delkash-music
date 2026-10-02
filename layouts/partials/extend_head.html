@@ -20,8 +20,6 @@
 })();
 </script>
 
-{{- /* اطمینان از وجود id="main" در همه صفحات برای skip-link */ -}}
-<script>document.addEventListener('DOMContentLoaded',function(){var m=document.querySelector('main');if(m&&!m.id)m.id='main';});</script>
 
 {{- if eq .Kind "taxonomy" }}
   {{- if eq .Data.Plural "tags" }}
