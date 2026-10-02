@@ -79,9 +79,9 @@
 .dk-btn.primary:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(212,162,74,.5);}
 .dk-btn.ghost{border:1px solid var(--dk-line);color:var(--dk-gold2);}
 .dk-btn.ghost:hover{border-color:var(--dk-gold);background:rgba(212,162,74,.1);}
-  <a class="dk-btn primary" href="https://t.me/delkash_music" target="_blank" rel="noopener">عضویت در تلگرام</a>
-<a class="dk-btn ghost" href="https://idpay.ir/delkash" target="_blank" rel="noopener">💛 حمایت مالی</a>
-<a class="dk-btn ghost" href="{{ "about" | relLangURL }}">درباره دلکش</a>
+  <a class="dk-btn primary" href="https://t.me/delkash_music" target="_blank" rel="noopener noreferrer">عضویت در تلگرام</a>
+      <a class="dk-btn ghost" href="https://idpay.ir/delkash" target="_blank" rel="noopener noreferrer">💛 حمایت مالی</a>
+      <a class="dk-btn ghost" href="{{ "about" | relLangURL }}">درباره دلکش</a>
 
 /* ---------- واکنش‌گرا ---------- */
 @media (max-width:920px){.dk-grid{grid-template-columns:repeat(2,1fr);}}
@@ -100,14 +100,18 @@
       <p class="dk-tagline">متن کامل تصنیف‌ها و آوازهای موسیقی ایرانی؛ از هایده تا شجریان، با دسته‌بندی بر اساس دستگاه‌های موسیقی</p>
 
       <form class="dk-search" action="{{ "search" | relLangURL }}" method="get" role="search">
-        <input type="search" name="q" placeholder="جستجوی تصنیف، خواننده یا دستگاه…" aria-label="جستجو">
+        <input type="search" name="q" placeholder="جستجوی تصنیف، خواننده یا دستگاه…" aria-label="جستجوی تصنیف، خواننده یا دستگاه" autocomplete="off">
         <button type="submit">جستجو</button>
       </form>
 
-      <div class="dk-stats">
-        <div><strong>+۵۰۰</strong><span>تصنیف ماندگار</span></div>
-        <div><strong>۱۵</strong><span>دستگاه و آواز</span></div>
-        <div><strong>+۶۰</strong><span>خواننده</span></div>
+      {{- $musicPosts := where (where site.RegularPages "Section" "posts") "Params.hideFromLists" "ne" true -}}
+      {{- $postCount := len $musicPosts -}}
+      {{- $categoryCount := len site.Taxonomies.categories -}}
+      {{- $artistCount := len site.Taxonomies.artists -}}
+      <div class="dk-stats" aria-label="آمار محتوای سایت">
+        <div><strong>{{ $postCount }}</strong><span>تصنیف منتشرشده</span></div>
+        <div><strong>{{ $categoryCount }}</strong><span>دستگاه و آواز</span></div>
+        <div><strong>{{ $artistCount }}</strong><span>خواننده</span></div>
       </div>
     </div>
   </section>
