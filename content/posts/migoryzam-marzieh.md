@@ -1,5 +1,6 @@
 ---
 title: "تصنیف می‌گریزم مرضیه | متن آهنگ و دانلود ۳۲۰"
+songTitle: "می‌گریزم"
 date: 2026-08-14
 description: "متن کامل تصنیف می‌گریزم با صدای مرضیه در آواز دشتی (اثر حبیب‌الله بدیعی) + بازخوانی همایون کاظمی — پخش آنلاین و دانلود"
 audio: "https://archive.org/download/migoryzam-homayoun-kazemi/migoryzam-marzieh.mp3"
