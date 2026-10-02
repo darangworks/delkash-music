@@ -5,7 +5,7 @@ description: "متن کامل تصنیف تنها با گلها با صدای ه
 audio: "https://archive.org/download/tanha-ba-golha-hayedeh_20260905/tanha-ba-golha-hayedeh.mp3"
 recordings:
   - artist: "هایده"
-    role: "original"
+    role: "primary"
     audio: "https://archive.org/download/tanha-ba-golha-hayedeh_20260905/tanha-ba-golha-hayedeh.mp3"
     duration: "PT5M11S"
 tags: ["تنها با گلها"]
