@@ -4,6 +4,7 @@ defaultContentLanguage = "fa"
 title = "موسیقی دلکش | مرجع متن آهنگ و تصنیف ایرانی"
 theme = "PaperMod"
 enableRobotsTXT = true
+
 [languages.fa]
   languageName = "فارسی"
   languageDirection = "rtl"
@@ -11,15 +12,15 @@ enableRobotsTXT = true
 
 [pagination]
   pagerSize = 10
+
 [taxonomies]
   category = "categories"
   tag = "tags"
   artist = "artists"
   composer = "composers"
-  decade = "decades"
 
 [params]
-  description = "مرجع متن آهنگ و تصنیف‌های ماندگار موسیقی ایرانی — پخش آنلاین و دانلود با کیفیت بالا"
+  description = "مرجع متن آهنگ و تصنیف‌های موسیقی ایرانی — پخش آنلاین و دانلود با کیفیت بالا"
   author = "تیم موسیقی دلکش"
   defaultTheme = "dark"
   images = ["images/background.jpg"]
@@ -37,7 +38,7 @@ enableRobotsTXT = true
 
 [params.homeInfoParams]
   Title = "🎵 به موسیقی دلکش خوش آمدید"
-  Content = "مرجع متن آهنگ و تصنیف‌های ماندگار موسیقی ایرانی — با دسته‌بندی دستگاه‌ها و پخش آنلاین"
+  Content = "مرجع متن آهنگ و تصنیف‌های موسیقی ایرانی — با دسته‌بندی دستگاه‌ها و پخش آنلاین"
 
 [[params.socialIcons]]
   name = "telegram"
@@ -60,7 +61,7 @@ enableRobotsTXT = true
   weight = 2
 
 [[menu.main]]
-  identifier = "tags"
+  identifier = "categories"
   name = "دستگاه‌های موسیقی"
   url = "/categories/"
   weight = 3
