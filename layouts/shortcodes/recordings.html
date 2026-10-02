@@ -7,7 +7,7 @@
       <strong>🎤 {{ $r.artist }}</strong>
       {{- with $r.role }}
         {{- if eq . "cover" }} <span class="recording-role">بازخوانی</span>{{ end }}
-        {{- if eq . "original" }} <span class="recording-role">اجرای اصلی</span>{{ end }}
+        {{- if eq . "primary" }} <span class="recording-role">اجرای اصلی صفحه</span>{{ end }}
       {{- end }}
       {{- with $r.duration }} <span class="recording-duration">{{ . }}</span>{{ end }}
     </div>
