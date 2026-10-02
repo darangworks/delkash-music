@@ -89,7 +89,7 @@
 
   <!-- ═══ هیرو ═══ -->
   <section class="dk-hero">
-    <div class="dk-hero-bg" role="img" aria-hidden="true"></div>
+    <img class="dk-hero-bg" src="{{ "images/background.jpg" | relURL }}" alt="" aria-hidden="true" fetchpriority="high" decoding="async">
     <div class="dk-hero-content">
       <span class="dk-badge">♪ گنجینهٔ موسیقی ایرانی</span>
       <h1>موسیقی <span class="dk-gold">دلکش</span></h1>
@@ -133,7 +133,7 @@
       <a class="dk-card" href="{{ .Permalink }}">
         {{- with .Params.cover }}
           {{- with .image }}
-         <div class="dk-card-media"><img src="{{ . }}" alt="کاور تصنیف {{ $.Title }}" loading="lazy"></div>
+         <div class="dk-card-media"><img src="{{ . }}" alt="کاور تصنیف {{ $.Title }}" loading="lazy" decoding="async"></div>
           {{- end }}
         {{- else }}
           <div class="dk-card-media dk-card-ph">♪</div>
