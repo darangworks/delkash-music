@@ -1,4 +1,4 @@
-{{- if and .IsPage (eq .Type "posts") .Params.audio }}
+{{- if and .IsPage (eq .Type "posts") (or .Params.audio .Params.recordings) }}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -17,22 +17,38 @@
   "composer": { "@type": "Person", "name": {{ .Params.composer | default "نامشخص" | jsonify }} },
   "genre": {{ .Params.dastgah | default "" | jsonify }},
   "recordedAs": [
-    {{- range $i, $r := .Params.recordings }}
-    {{- if $i }},{{ end }}
-    {
-      "@type": "MusicRecording",
-      "@id": {{ printf "%s#recording-%d" $.Permalink $i | jsonify }},
-      "name": {{ $.Title | jsonify }},
-      "byArtist": { "@type": "Person", "name": {{ $r.artist | jsonify }} },
-      "inLanguage": "fa",
-      "recordingOf": { "@id": {{ printf "%s#composition" $.Permalink | jsonify }} },
-      "audio": {
-        "@type": "AudioObject",
-        "contentUrl": {{ $r.audio | jsonify }},
-        "encodingFormat": "audio/mpeg"
-      }{{ with $r.duration }},
-      "duration": {{ . | jsonify }}{{ end }}
-    }
+    {{- if .Params.recordings }}
+      {{- range $i, $r := .Params.recordings }}
+      {{- if $i }},{{ end }}
+      {
+        "@type": "MusicRecording",
+        "@id": {{ printf "%s#recording-%d" $.Permalink $i | jsonify }},
+        "name": {{ $.Title | jsonify }},
+        "byArtist": { "@type": "Person", "name": {{ $r.artist | jsonify }} },
+        "inLanguage": "fa",
+        "recordingOf": { "@id": {{ printf "%s#composition" $.Permalink | jsonify }} },
+        "audio": {
+          "@type": "AudioObject",
+          "contentUrl": {{ $r.audio | jsonify }},
+          "encodingFormat": "audio/mpeg"
+        }{{ with $r.duration }},
+        "duration": {{ . | jsonify }}{{ end }}
+      }
+      {{- end }}
+    {{- else }}
+      {
+        "@type": "MusicRecording",
+        "@id": {{ printf "%s#recording-0" .Permalink | jsonify }},
+        "name": {{ .Title | jsonify }},
+        "byArtist": { "@type": "Person", "name": {{ .Params.artist | default "نامشخص" | jsonify }} },
+        "inLanguage": "fa",
+        "recordingOf": { "@id": {{ printf "%s#composition" .Permalink | jsonify }} },
+        "audio": {
+          "@type": "AudioObject",
+          "contentUrl": {{ .Params.audio | jsonify }},
+          "encodingFormat": "audio/mpeg"
+        }
+      }
     {{- end }}
   ]
 }
