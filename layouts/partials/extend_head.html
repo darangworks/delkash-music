@@ -23,8 +23,10 @@
 {{- /* اطمینان از وجود id="main" در همه صفحات برای skip-link */ -}}
 <script>document.addEventListener('DOMContentLoaded',function(){var m=document.querySelector('main');if(m&&!m.id)m.id='main';});</script>
 
-{{- if or (eq .Type "tags") (eq .Kind "taxonomy" | and (eq .Data.Plural "tags")) }}
+{{- if eq .Kind "taxonomy" }}
+  {{- if eq .Data.Plural "tags" }}
 <meta name="robots" content="noindex,follow">
+  {{- end }}
 {{- end }}
 
 {{- partial "schema-song.html" . }}
