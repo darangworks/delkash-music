@@ -1,5 +1,6 @@
 ---
 title: "متن آهنگ دو سه شبه مرضیه | دانلود ۳۲۰ + بازخوانی جهان"
+songTitle: "دو سه شبه که چشمام به دره"
 date: 2026-08-12
 description: "متن کامل تصنیف دو سه شبه که چشمام به دره با صدای مرضیه (آواز دشتی) + اجرای جهان — پخش و دانلود MP3 کیفیت ۳۲۰"
 audio: "https://archive.org/download/do-se-shab-marzieh/do-se-shab-marzieh.mp3"
