@@ -100,6 +100,6 @@ cover:
 
 - `artist` و `audio` فعلاً برای سازگاری نگه داشته می‌شوند.
 - برای دادهٔ جدید از `recordings` استفاده کنید.
-- هر آیتم `recordings` شامل `artist`, `role` و `audio` است؛ `role` فقط `original` یا `cover`.
+- هر آیتم `recordings` شامل `artist`, `role` و `audio` است؛ `role` فقط `primary` یا `cover`.
 - عنوان جایگزین مستند با `alternateTitles` ثبت می‌شود.
 - جزئیات کامل قرارداد در `CONTENT_MODEL.md` است.
