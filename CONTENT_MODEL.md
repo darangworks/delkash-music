@@ -21,7 +21,7 @@ alternateTitles:
 recordings:
   - artist: "مرضیه"
     role: "primary"
-    audio: "https://example.org/original.mp3"
+    audio: "https://example.org/primary.mp3"
   - artist: "جهان"
     role: "cover"
     audio: "https://example.org/cover.mp3"
@@ -29,11 +29,11 @@ recordings:
 
 ### قرارداد `recordings`
 - `artist`: نام اجراکننده.
-- `role`: فقط `original` یا `cover`.
+- `role`: فقط `primary` یا `cover`.
 - `audio`: لینک مستقیم فایل صوتی.
 - `duration`: اختیاری؛ در صورت وجود ISO 8601 مثل `PT5M11S`.
 - سال ضبط، ناشر یا منبع فقط وقتی اضافه شوند که واقعاً مستند باشند.
-- ترتیب آرایه همان ترتیب نمایش در صفحه است؛ معمولاً اجرای اصلی صفحه اول می‌آید.
+- ترتیب آرایه همان ترتیب نمایش در صفحه است؛ معمولاً اجرای primary صفحه اول می‌آید.
 
 ### سازگاری با مدل قبلی
 در مهاجرت فعلی `artist` و `audio` حذف نمی‌شوند؛ `recordings` مدل جدید است و رفتار فعلی پخش و URLها باید حفظ شود. حذف legacy fields به یک cleanup جداگانه پس از audit کامل موکول می‌شود.
