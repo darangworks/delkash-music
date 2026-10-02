@@ -43,7 +43,7 @@ cover:
   <source src="https://archive.org/download/migoryzam-homayoun-kazemi/migoryzam-marzieh.mp3" type="audio/mpeg">
 </audio>
 
-<a class="dl-btn" href="https://archive.org/download/migoryzam-homayoun-kazemi/migoryzam-marzieh.mp3">⬇ دانلود اجرای مرضیه (۳۲)</a>
+<a class="dl-btn" href="https://archive.org/download/migoryzam-homayoun-kazemi/migoryzam-marzieh.mp3">⬇ دانلود اجرای مرضیه (۳۲۰)</a>
 
 <a class="dl-btn" href="https://archive.org/download/migoryzam-homayoun-kazemi/migoryzam-homayoun-kazemi.mp3" style="margin-top:10px">⬇ دانلود اجرای همایون کاظمی (بازخوانی)</a>
 
