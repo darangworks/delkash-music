@@ -83,12 +83,13 @@
     
     btn.onclick = function(){
       audio.src = src;
-      audio.play();
+      audio.play().catch(function(){});
       player.style.display = 'flex';
       titleEl.textContent = document.querySelector('h1, .post-title, .entry-header h2')?.textContent || 'تصنیف';
       var artistMeta = document.querySelector('.post-meta')?.textContent || '';
       artistEl.textContent = artistMeta.trim().split('|')[0].trim() || '';
       document.body.style.paddingBottom = '80px';
+      btn.setAttribute('aria-label', 'پخش ' + (titleEl.textContent || 'تصنیف'));
     };
     a.parentNode.insertBefore(btn, a);
   });
@@ -96,6 +97,7 @@
   closeBtn.onclick = function(){
     audio.pause();
     audio.src = '';
+    document.querySelectorAll('.play-btn[aria-label]').forEach(function(b){ b.removeAttribute('aria-current'); });
     player.style.display = 'none';
     document.body.style.paddingBottom = '';
   };
