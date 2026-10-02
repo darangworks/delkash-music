@@ -80,6 +80,7 @@
     var btn = document.createElement('button');
     btn.className = 'play-btn';
     btn.innerHTML = '<span class="play-icon">▶</span> پخش این تصنیف';
+    btn.setAttribute('data-artist', a.getAttribute('data-artist') || '');
     btn.style.cssText = 'width:100%;background:linear-gradient(135deg,#f0c978,#d4a24a);color:#1c1509;border:none;padding:14px 20px;border-radius:12px;font-family:inherit;font-size:1rem;font-weight:700;cursor:pointer;margin:20px 0;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 4px 14px rgba(212,162,74,.3);transition:all 0.3s;';
     btn.onmouseenter = function(){ this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 22px rgba(212,162,74,.5)'; };
     btn.onmouseleave = function(){ this.style.transform=''; this.style.boxShadow='0 4px 14px rgba(212,162,74,.3)'; };
@@ -89,7 +90,7 @@
       audio.play().catch(function(){});
       player.style.display = 'flex';
       titleEl.textContent = pageTitle || 'تصنیف';
-      artistEl.textContent = pageArtist || '';
+      artistEl.textContent = btn.getAttribute('data-artist') || pageArtist || '';
       document.body.style.paddingBottom = '80px';
       btn.setAttribute('aria-label', 'پخش ' + (titleEl.textContent || 'تصنیف'));
       btn.setAttribute('aria-pressed', 'true');

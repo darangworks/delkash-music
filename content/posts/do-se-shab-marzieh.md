@@ -3,6 +3,15 @@ title: "متن آهنگ دو سه شبه مرضیه | دانلود ۳۲۰ + با
 date: 2026-08-12
 description: "متن کامل تصنیف دو سه شبه که چشمام به دره با صدای مرضیه (آواز دشتی) + اجرای جهان — پخش و دانلود MP3 کیفیت ۳۲۰"
 audio: "https://archive.org/download/do-se-shab-marzieh/do-se-shab-marzieh.mp3"
+alternateTitles:
+  - "خدا کنه خوابم نبره"
+recordings:
+  - artist: "مرضیه"
+    role: "primary"
+    audio: "https://archive.org/download/do-se-shab-marzieh/do-se-shab-marzieh.mp3"
+  - artist: "جهان"
+    role: "cover"
+    audio: "https://archive.org/download/do-se-shab-marzieh/do-se-shab-jahan.mp3"
 tags: ["دو سه شبه"]
 categories: ["آواز دشتی"]
 artist: "مرضیه"
@@ -38,13 +47,7 @@ cover:
 
 ## پخش و دانلود
 
-<audio controls preload="none">
-  <source src="https://archive.org/download/do-se-shab-marzieh/do-se-shab-marzieh.mp3" type="audio/mpeg">
-</audio>
-
-<a class="dl-btn" href="https://archive.org/download/do-se-shab-marzieh/do-se-shab-marzieh.mp3">⬇ دانلود اجرای مرضیه (320)</a>
-
-<a class="dl-btn" href="https://archive.org/download/do-se-shab-marzieh/do-se-shab-jahan.mp3" style="margin-top:10px">⬇ دانلود اجرای جهان (بازخوانی)</a>
+{{< recordings >}}
 
 ## متن آهنگ دو سه شبه که چشمام به دره
 

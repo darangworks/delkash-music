@@ -1,0 +1,24 @@
+{{- $recordings := .Page.Params.recordings -}}
+{{- if $recordings }}
+<div class="recordings-list" aria-label="اجراهای این اثر">
+  {{- range $i, $r := $recordings }}
+  <div class="recording-item">
+    <div class="recording-meta">
+      <strong>🎤 {{ $r.artist }}</strong>
+      {{- with $r.role }}
+        {{- if eq . "cover" }} <span class="recording-role">بازخوانی</span>{{ end }}
+        {{- if eq . "primary" }} <span class="recording-role">اجرای اصلی صفحه</span>{{ end }}
+      {{- end }}
+      {{- with $r.duration }} <span class="recording-duration">{{ . }}</span>{{ end }}
+    </div>
+    {{- $audio := .audio -}}
+    {{- with $audio }}
+    <audio controls preload="none" aria-label="پخش اجرای {{ $r.artist }}" data-artist="{{ $r.artist }}">
+      <source src="{{ $audio }}" type="audio/mpeg">
+    </audio>
+    <a class="dl-btn recording-download" href="{{ $audio }}">⬇ دانلود اجرای {{ $r.artist }}</a>
+    {{- end }}
+  </div>
+  {{- end }}
+</div>
+{{- end }}

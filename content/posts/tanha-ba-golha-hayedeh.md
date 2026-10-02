@@ -3,6 +3,11 @@ title: "متن تصنیف تنها با گلها هایده | دانلود آه�
 date: 2026-09-05
 description: "متن کامل تصنیف تنها با گلها با صدای هایده در آواز دشتی (اثر حسن لشگری، شعر علیرضا طبائی) + پخش آنلاین و دانلود با کیفیت ۳۲۰"
 audio: "https://archive.org/download/tanha-ba-golha-hayedeh_20260905/tanha-ba-golha-hayedeh.mp3"
+recordings:
+  - artist: "هایده"
+    role: "primary"
+    audio: "https://archive.org/download/tanha-ba-golha-hayedeh_20260905/tanha-ba-golha-hayedeh.mp3"
+    duration: "PT5M11S"
 tags: ["تنها با گلها"]
 categories: ["آواز دشتی"]
 artist: "هایده"
@@ -38,11 +43,7 @@ cover:
 
 ## پخش و دانلود
 
-<audio controls preload="none">
-  <source src="https://archive.org/download/tanha-ba-golha-hayedeh_20260905/tanha-ba-golha-hayedeh.mp3" type="audio/mpeg">
-</audio>
-
-<a class="dl-btn" href="https://archive.org/download/tanha-ba-golha-hayedeh_20260905/tanha-ba-golha-hayedeh.mp3" download>⬇ دانلود با کیفیت ۳۲۰</a>
+{{< recordings >}}
 
 ## متن تصنیف تنها با گلها
 
