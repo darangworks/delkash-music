@@ -534,3 +534,13 @@ blockquote.refrain{
 .skip-link{position:fixed;inset-inline-start:20px;top:-100px;z-index:300;background:#d4a24a;color:#1c1509;padding:10px 18px;border-radius:8px;font-weight:700;text-decoration:none;transition:top .2s;}
 .skip-link:focus{top:10px;outline:2px solid #f0c978;}
 .main-nav a[aria-current="page"] { color:#f3d28f; border-color:#e0aa4e; }
+
+
+/* Multi-recording work model */
+.recordings-list{display:grid;gap:14px;margin:18px 0}
+.recording-item{padding:14px 16px;border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--surface)}
+.recording-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px;color:var(--ink)}
+.recording-role,.recording-duration{font-size:.78rem;color:var(--muted)}
+.recording-role{padding:3px 8px;border:1px solid var(--line);border-radius:999px}
+.recording-item audio{width:100%;margin:0 0 10px}
+.recording-download{display:inline-flex!important;width:auto!important;margin:0!important}
