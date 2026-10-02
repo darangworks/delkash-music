@@ -22,7 +22,6 @@
   "lyricist": { "@type": "Person", "name": {{ .Params.lyricist | default "نامشخص" | jsonify }} },
   "composer": { "@type": "Person", "name": {{ .Params.composer | default "نامشخص" | jsonify }} },
   "genre": {{ .Params.dastgah | default "" | jsonify }},
-  "isFamilyFriendly": true,
   "recordedAs": {
     "@type": "MusicRecording",
     "byArtist": { "@type": "MusicGroup", "name": {{ $artistName | jsonify }} },
