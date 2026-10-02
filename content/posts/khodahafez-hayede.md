@@ -5,7 +5,7 @@ description: "متن کامل آهنگ خداحافظ با صدای هایده (
 audio: "https://archive.org/download/khodahafez-hayede/khodahafez-hayede.mp3"
 recordings:
   - artist: "هایده"
-    role: "original"
+    role: "primary"
     audio: "https://archive.org/download/khodahafez-hayede/khodahafez-hayede.mp3"
 tags: ["خداحافظ"]
 categories: ["آواز دشتی"]
