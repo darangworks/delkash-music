@@ -434,13 +434,13 @@ input:focus-visible,
   float: right;
   line-height: 1;
   padding-left: 12px;
-  color: var(--dk-gold-2, #f0c978);
+  color: var(--gold-2);
   margin-top: -4px;
 }
 
 /* دکمه پخش به‌شکل مهر موم */
 .play-btn {
-  background: radial-gradient(circle at 30% 30%, var(--dk-gold-2, #f0c978), var(--dk-gold, #d4a24a)) !important;
+  background: radial-gradient(circle at 30% 30%, var(--gold-2), var(--gold)) !important;
   border-radius: 50% !important;
   width: 80px !important;
   height: 80px !important;
