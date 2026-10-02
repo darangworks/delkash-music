@@ -3,49 +3,49 @@
 {
   "@context": "https://schema.org",
   "@type": "MusicComposition",
-  "@id": {{ printf "%s#composition" .Permalink | jsonify }},
-  "mainEntityOfPage": {{ .Permalink | jsonify }},
-  "name": {{ .Title | jsonify }},
+  "@id": {{ printf "%s#composition" .Permalink | jsonify | safeJS }},
+  "mainEntityOfPage": {{ .Permalink | jsonify | safeJS }},
+  "name": {{ .Title | jsonify | safeJS }},
   {{- with .Params.alternateTitles }}
-  "alternateName": {{ . | jsonify }},
+  "alternateName": {{ . | jsonify | safeJS }},
   {{- end }}
-  "description": {{ .Params.description | default .Summary | jsonify }},
+  "description": {{ .Params.description | default .Summary | jsonify | safeJS }},
   "inLanguage": "fa",
-  "url": {{ .Permalink | jsonify }},
-  "datePublished": {{ .Date.Format "2006-01-02" | jsonify }},
-  "lyricist": { "@type": "Person", "name": {{ .Params.lyricist | default "نامشخص" | jsonify }} },
-  "composer": { "@type": "Person", "name": {{ .Params.composer | default "نامشخص" | jsonify }} },
-  "genre": {{ .Params.dastgah | default "" | jsonify }},
+  "url": {{ .Permalink | jsonify | safeJS }},
+  "datePublished": {{ .Date.Format "2006-01-02" | jsonify | safeJS }},
+  "lyricist": { "@type": "Person", "name": {{ .Params.lyricist | default "نامشخص" | jsonify | safeJS }} },
+  "composer": { "@type": "Person", "name": {{ .Params.composer | default "نامشخص" | jsonify | safeJS }} },
+  "genre": {{ .Params.dastgah | default "" | jsonify | safeJS }},
   "recordedAs": [
     {{- if .Params.recordings }}
       {{- range $i, $r := .Params.recordings }}
       {{- if $i }},{{ end }}
       {
         "@type": "MusicRecording",
-        "@id": {{ printf "%s#recording-%d" $.Permalink $i | jsonify }},
-        "name": {{ $.Title | jsonify }},
-        "byArtist": { "@type": "Person", "name": {{ $r.artist | jsonify }} },
+        "@id": {{ printf "%s#recording-%d" $.Permalink $i | jsonify | safeJS }},
+        "name": {{ $.Title | jsonify | safeJS }},
+        "byArtist": { "@type": "Person", "name": {{ $r.artist | jsonify | safeJS }} },
         "inLanguage": "fa",
-        "recordingOf": { "@id": {{ printf "%s#composition" $.Permalink | jsonify }} },
+        "recordingOf": { "@id": {{ printf "%s#composition" $.Permalink | jsonify | safeJS }} },
         "audio": {
           "@type": "AudioObject",
-          "contentUrl": {{ $r.audio | jsonify }},
+          "contentUrl": {{ $r.audio | jsonify | safeJS }},
           "encodingFormat": "audio/mpeg"
         }{{ with $r.duration }},
-        "duration": {{ . | jsonify }}{{ end }}
+        "duration": {{ . | jsonify | safeJS }}{{ end }}
       }
       {{- end }}
     {{- else }}
       {
         "@type": "MusicRecording",
-        "@id": {{ printf "%s#recording-0" .Permalink | jsonify }},
-        "name": {{ .Title | jsonify }},
-        "byArtist": { "@type": "Person", "name": {{ .Params.artist | default "نامشخص" | jsonify }} },
+        "@id": {{ printf "%s#recording-0" .Permalink | jsonify | safeJS }},
+        "name": {{ .Title | jsonify | safeJS }},
+        "byArtist": { "@type": "Person", "name": {{ .Params.artist | default "نامشخص" | jsonify | safeJS }} },
         "inLanguage": "fa",
-        "recordingOf": { "@id": {{ printf "%s#composition" .Permalink | jsonify }} },
+        "recordingOf": { "@id": {{ printf "%s#composition" .Permalink | jsonify | safeJS }} },
         "audio": {
           "@type": "AudioObject",
-          "contentUrl": {{ .Params.audio | jsonify }},
+          "contentUrl": {{ .Params.audio | jsonify | safeJS }},
           "encodingFormat": "audio/mpeg"
         }
       }
@@ -60,8 +60,8 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": {{ .Site.Title | jsonify }},
-  "url": {{ .Site.BaseURL | jsonify }},
+  "name": {{ .Site.Title | jsonify | safeJS }},
+  "url": {{ .Site.BaseURL | jsonify | safeJS }},
   "inLanguage": "fa"
 }
 </script>
