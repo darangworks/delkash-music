@@ -6,7 +6,7 @@
 <body class="dark" id="top">
   {{- partial "header.html" . }}
   <div class="delkash-layout{{ if .IsHome }} dk-full{{ end }}">
-    <main class="main">
+    <main id="main" class="main">
       {{- block "main" . }}{{ end }}
     </main>
     {{- if not .IsHome }}
