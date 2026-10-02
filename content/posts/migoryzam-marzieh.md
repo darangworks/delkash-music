@@ -7,7 +7,7 @@ tags: ["می‌گریزم"]
 categories: ["آواز دشتی"]
 artist: "مرضیه"
 artists: ["مرضیه"]
-composer: "حبیب الله بدیعی"
+composer: "حبیب‌الله بدیعی"
 composers: ["حبیب الله بدیعی"]
 lyricist: "رحیم معینی کرمانشاهی"
 dastgah: "آواز دشتی"
