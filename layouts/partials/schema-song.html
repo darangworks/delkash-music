@@ -24,7 +24,7 @@
   "genre": {{ .Params.dastgah | default "" | jsonify }},
   "recordedAs": {
     "@type": "MusicRecording",
-    "byArtist": { "@type": "MusicGroup", "name": {{ $artistName | jsonify }} },
+    "byArtist": { "@type": "Person", "name": {{ $artistName | jsonify }} },
     "inLanguage": "fa"{{ with .Params.audio }},
     "audio": {
       "@type": "AudioObject",
