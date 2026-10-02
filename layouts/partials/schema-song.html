@@ -1,69 +1,55 @@
 {{- if and .IsPage (eq .Type "posts") (or .Params.audio .Params.recordings) }}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MusicComposition",
-  "@id": {{ printf "%s#composition" .Permalink | jsonify | safeJS }},
-  "mainEntityOfPage": {{ .Permalink | jsonify | safeJS }},
-  "name": {{ .Params.songTitle | default .Title | jsonify | safeJS }},
-  {{- with .Params.alternateTitles }}
-  "alternateName": {{ . | jsonify | safeJS }},
-  {{- end }}
-  "description": {{ .Params.description | default .Summary | jsonify | safeJS }},
-  "inLanguage": "fa",
-  "url": {{ .Permalink | jsonify | safeJS }},
-  "datePublished": {{ .Date.Format "2006-01-02" | jsonify | safeJS }},
-  "lyricist": { "@type": "Person", "name": {{ .Params.lyricist | default "نامشخص" | jsonify | safeJS }} },
-  "composer": { "@type": "Person", "name": {{ .Params.composer | default "نامشخص" | jsonify | safeJS }} },
-  "genre": {{ .Params.dastgah | default "" | jsonify | safeJS }},
-  "recordedAs": [
-    {{- if .Params.recordings }}
-      {{- range $i, $r := .Params.recordings }}
-      {{- if $i }},{{ end }}
-      {
-        "@type": "MusicRecording",
-        "@id": {{ printf "%s#recording-%d" $.Permalink $i | jsonify | safeJS }},
-        "name": {{ $.Params.songTitle | default $.Title | jsonify | safeJS }},
-        "byArtist": { "@type": "Person", "name": {{ $r.artist | jsonify | safeJS }} },
-        "inLanguage": "fa",
-        "recordingOf": { "@id": {{ printf "%s#composition" $.Permalink | jsonify | safeJS }} },
-        {{ with $r.audio }}
-        "audio": {
-          "@type": "AudioObject",
-          "contentUrl": {{ . | jsonify | safeJS }},
-          "encodingFormat": "audio/mpeg"
-        }{{ end }}{{ with $r.duration }},
-        "duration": {{ . | jsonify | safeJS }}{{ end }}
-      }
-      {{- end }}
-    {{- else }}
-      {
-        "@type": "MusicRecording",
-        "@id": {{ printf "%s#recording-0" .Permalink | jsonify | safeJS }},
-        "name": {{ .Params.songTitle | default .Title | jsonify | safeJS }},
-        "byArtist": { "@type": "Person", "name": {{ .Params.artist | default "نامشخص" | jsonify | safeJS }} },
-        "inLanguage": "fa",
-        "recordingOf": { "@id": {{ printf "%s#composition" .Permalink | jsonify | safeJS }} },
-        "audio": {
-          "@type": "AudioObject",
-          "contentUrl": {{ .Params.audio | jsonify | safeJS }},
-          "encodingFormat": "audio/mpeg"
-        }
-      }
+{{- $title := .Params.songTitle | default .Title }}
+{{- $compID := printf "%s#composition" .Permalink }}
+{{- $recs := slice }}
+{{- if .Params.recordings }}
+  {{- range $i, $r := .Params.recordings }}
+    {{- $rec := dict
+        "@type" "MusicRecording"
+        "@id" (printf "%s#recording-%d" $.Permalink $i)
+        "name" $title
+        "byArtist" (dict "@type" "Person" "name" $r.artist)
+        "inLanguage" "fa"
+        "recordingOf" (dict "@id" $compID) }}
+    {{- with $r.audio }}
+      {{- $rec = merge $rec (dict "audio" (dict "@type" "AudioObject" "contentUrl" . "encodingFormat" "audio/mpeg")) }}
     {{- end }}
-  ]
-}
-</script>
+    {{- with $r.duration }}
+      {{- $rec = merge $rec (dict "duration" .) }}
+    {{- end }}
+    {{- $recs = $recs | append $rec }}
+  {{- end }}
+{{- else }}
+  {{- $rec := dict
+      "@type" "MusicRecording"
+      "@id" (printf "%s#recording-0" .Permalink)
+      "name" $title
+      "byArtist" (dict "@type" "Person" "name" (.Params.artist | default "نامشخص"))
+      "inLanguage" "fa"
+      "recordingOf" (dict "@id" $compID)
+      "audio" (dict "@type" "AudioObject" "contentUrl" .Params.audio "encodingFormat" "audio/mpeg") }}
+  {{- $recs = $recs | append $rec }}
+{{- end }}
+{{- $comp := dict
+    "@context" "https://schema.org"
+    "@type" "MusicComposition"
+    "@id" $compID
+    "mainEntityOfPage" .Permalink
+    "name" $title
+    "description" (.Params.description | default .Summary | plainify)
+    "inLanguage" "fa"
+    "url" .Permalink
+    "datePublished" (.Date.Format "2006-01-02")
+    "lyricist" (dict "@type" "Person" "name" (.Params.lyricist | default "نامشخص"))
+    "composer" (dict "@type" "Person" "name" (.Params.composer | default "نامشخص"))
+    "genre" (.Params.dastgah | default "")
+    "recordedAs" $recs }}
+{{- with .Params.alternateTitles }}
+  {{- $comp = merge $comp (dict "alternateName" .) }}
+{{- end }}
+<script type="application/ld+json">{{ $comp | jsonify | safeJS }}</script>
 {{- end }}
 
 {{- if .IsHome }}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": {{ .Site.Title | jsonify | safeJS }},
-  "url": {{ .Site.BaseURL | jsonify | safeJS }},
-  "inLanguage": "fa"
-}
-</script>
+<script type="application/ld+json">{{ dict "@context" "https://schema.org" "@type" "WebSite" "name" .Site.Title "url" .Site.BaseURL "inLanguage" "fa" | jsonify | safeJS }}</script>
 {{- end }}

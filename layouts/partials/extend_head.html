@@ -20,10 +20,9 @@
 })();
 </script>
 
-
 {{- if eq .Kind "taxonomy" }}
   {{- if eq .Data.Plural "tags" }}
-<meta name="robots" content="noindex,follow">
+<meta name="robots" content="noindex,nofollow">
   {{- end }}
 {{- end }}
 
