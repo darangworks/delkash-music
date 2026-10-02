@@ -54,7 +54,8 @@
   font-size: 14px;
   transition: all 0.2s;
 }
-.fp-close:hover { background: var(--gold); color: #1c1509; }\n@media (prefers-reduced-motion: reduce) { .fp-icon { animation: none; } .fp-close { transition: none; } }
+.fp-close:hover { background: var(--gold); color: #1c1509; }
+@media (prefers-reduced-motion: reduce) { .fp-icon { animation: none; } .fp-close { transition: none; } }
 @media (max-width: 640px) {
   .floating-player { padding: 10px 12px; gap: 10px; }
   .fp-icon { width: 36px; height: 36px; font-size: 16px; }
@@ -69,6 +70,8 @@
   var titleEl = document.getElementById('fpTitle');
   var artistEl = document.getElementById('fpArtist');
   var closeBtn = document.getElementById('fpClose');
+  var pageTitle = {{ .Title | jsonify }};
+  var pageArtist = {{ with .Params.artist }}{{ if reflect.IsSlice . }}{{ index . 0 | jsonify }}{{ else }}{{ . | jsonify }}{{ end }}{{ else }}{{ "" | jsonify }}{{ end }};
 
   // تبدیل audio تگ‌های داخل پست به دکمه پخش
   document.querySelectorAll('.post-content audio').forEach(function(a){
@@ -85,11 +88,11 @@
       audio.src = src;
       audio.play().catch(function(){});
       player.style.display = 'flex';
-      titleEl.textContent = document.querySelector('h1, .post-title, .entry-header h2')?.textContent || 'تصنیف';
-      var artistMeta = document.querySelector('.post-meta')?.textContent || '';
-      artistEl.textContent = artistMeta.trim().split('|')[0].trim() || '';
+      titleEl.textContent = pageTitle || 'تصنیف';
+      artistEl.textContent = pageArtist || '';
       document.body.style.paddingBottom = '80px';
       btn.setAttribute('aria-label', 'پخش ' + (titleEl.textContent || 'تصنیف'));
+      btn.setAttribute('aria-pressed', 'true');
     };
     a.parentNode.insertBefore(btn, a);
   });
@@ -97,7 +100,7 @@
   closeBtn.onclick = function(){
     audio.pause();
     audio.src = '';
-    document.querySelectorAll('.play-btn[aria-label]').forEach(function(b){ b.removeAttribute('aria-current'); });
+    document.querySelectorAll('.play-btn[aria-label]').forEach(function(b){ b.setAttribute('aria-pressed', 'false'); });
     player.style.display = 'none';
     document.body.style.paddingBottom = '';
   };
