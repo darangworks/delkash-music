@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /tags/
 
 Sitemap: https://delkash-music.ir/sitemap.xml
