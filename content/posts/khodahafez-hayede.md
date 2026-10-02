@@ -1,7 +1,7 @@
 ---
 title: "آهنگ خداحافظ هایده | متن تصنیف و دانلود با کیفیت ۳۲۰"
 date: 2026-08-10
-description: "متن کامل آهنگ خداحافظ با صدای هایده (تصنیف ماندگار جهانبخش پازوکی در آواز دشتی) + پخش آنلاین و دانلود کیفیت ۳۲۰"
+description: "متن کامل آهنگ خداحافظ با صدای هایده (اثر جهانبخش پازوکی در آواز دشتی) + پخش آنلاین و دانلود کیفیت ۳۲۰"
 audio: "https://archive.org/download/khodahafez-hayede/khodahafez-hayede.mp3"
 tags: ["خداحافظ"]
 categories: ["آواز دشتی"]
@@ -11,7 +11,6 @@ composer: "جهانبخش پازوکی"
 composers: ["جهانبخش پازوکی"]
 lyricist: "جهانبخش پازوکی"
 dastgah: "آواز دشتی"
-decades: ["دهه ۵۰"]
 cover:
   image: "https://res.cloudinary.com/wtx6mnrm/image/upload/w_1200,h_675,c_fill,g_face,q_auto,f_auto/v1787262265/Hayede3.jpg"
   hidden: true
