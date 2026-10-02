@@ -402,7 +402,7 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 .dk-search:focus-within {
-  outline: 2px solid var(--dk-gold-2) !important;
+  outline: 2px solid var(--gold-2) !important;
   outline-offset: 3px !important;
   border-radius: 6px;
 }
