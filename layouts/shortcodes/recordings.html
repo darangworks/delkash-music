@@ -13,7 +13,7 @@
     </div>
     {{- $audio := .audio -}}
     {{- with $audio }}
-    <audio controls preload="none" aria-label="پخش اجرای {{ $r.artist }}">
+    <audio controls preload="none" aria-label="پخش اجرای {{ $r.artist }}" data-artist="{{ $r.artist }}">
       <source src="{{ $audio }}" type="audio/mpeg">
     </audio>
     <a class="dl-btn recording-download" href="{{ $audio }}">⬇ دانلود اجرای {{ $r.artist }}</a>
