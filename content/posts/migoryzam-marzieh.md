@@ -5,7 +5,7 @@ description: "متن کامل تصنیف می‌گریزم با صدای مرض�
 audio: "https://archive.org/download/migoryzam-homayoun-kazemi/migoryzam-marzieh.mp3"
 recordings:
   - artist: "مرضیه"
-    role: "original"
+    role: "primary"
     audio: "https://archive.org/download/migoryzam-homayoun-kazemi/migoryzam-marzieh.mp3"
   - artist: "همایون کاظمی"
     role: "cover"
