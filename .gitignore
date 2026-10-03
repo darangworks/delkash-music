@@ -2,3 +2,10 @@
 /public/
 /resources/_gen/
 .hugo_build.lock
+
+# Blogfa migration working files (never commit)
+export/
+tools/export/
+*.blogfa
+ld.json
+files.txt
